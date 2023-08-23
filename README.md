@@ -1,8 +1,6 @@
 <p class=MsoNormal><b><span style='font-size:22.0pt;line-height:107%'>Getting
 and Cleaning Data Project<o:p></o:p></span></b></p>
 
-<p class=MsoNormal><o:p>&nbsp;</o:p></p>
-
 <p class=MsoNormal><span style='font-size:12.0pt;line-height:107%'>Welcome to
 my GitHub Repository for the <a
 href="https://www.coursera.org/learn/r-programming/home/info">Getting and
