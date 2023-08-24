@@ -197,7 +197,7 @@ Finally, the R script creates a final **tidy dataset** with the average of each 
 
 The result is saved in the `tidy_dataset_with_average_values.txt` file, containing a `180x81` table
 
-Again, the data frame contains:
-- `subject IDs` in the 1st column;
-- `activity labels` in the 2nd column;
-- the average of `features` in the next 66 columns.
+The table frame contains:
+- subject IDs in the 1st column;
+- activity labels in the 2nd column;
+- the average of attiributes in the next 79 columns.
