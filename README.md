@@ -43,6 +43,5 @@ I have observed the following **steps** for the data analysis
      - Uses descriptive activity names to name the activities in the data set <br>
      - Create the summary table with the average of each variable for each activity and each subject.<br>
 
-  The following file is created at the end
-
-    - `summary_table.txt` (*corresponding to a `180x81` data frame*)
+  The following file is created at the end <br>
+    - summary_table.txt 
