@@ -70,6 +70,8 @@ The following files are available for the train and test data. Their description
         and exctract the data from the single table according to the index
      
      3. Uses descriptive activity names to name to replace the data activities in the single table
+
+     4. Labels the data set appropriately with descriptive variable names.
      
      4. Creates a second, independent tidy data set with the average of each variable 
          for each activity and each subject.
@@ -80,14 +82,102 @@ The following files are available for the train and test data. Their description
 * "subject_test.txt", "y_test.txt" ,and "X_test.txt" : this results in a `10299 x 1` data frame with subject IDs, activity IDs, and measurements
 * "subject_train.txt", "y_train.txt" ,and "X_train.txt" : this results in a `10299 x 1` data frame with subject IDs, activity IDs, and measurements
 * both tables are merged with rrbind method
-* column names are given as "subjectID","activityID", and all the items from the features list
+
+### Labels the data set appropriately with descriptive variable names. ###
+
+The script properly labels the dataset with descriptive names from the features_list which has clean names without the need for further cleaning
+
+The single data set is a a single `10299x563` data frame corresponding to, `subject IDs`, renamed `activity labels` and complete list of `attributes` in the features_list.txt
+
 
 ### Extracts only the measurements on the mean and standard deviation for each measurement. 
 
 In order to extract onle the meansurements of *mean* and *standart deviation*, the script performs text filtering with grep function using the seelection
 criteria "mean()" and "std()"
 
-This results in a `10299 x 66` data frame, where `66` out of `561` features are selected and filtered in this step.
+This results in a `10299 x 81` data frame
+
+Names of the extracted 79 attributes corresponds to:
+
+"tBodyAcc-mean()-X " <br>
+"tBodyAcc-mean()-Z "<br>
+"tGravityAcc-mean()-Y "<br>
+"tBodyAccJerk-mean()-X "<br>
+"tBodyAccJerk-mean()-Z "<br>
+"tBodyGyro-mean()-Y "<br>
+"tBodyGyroJerk-mean()-X "<br>
+"tBodyGyroJerk-mean()-Z "<br>
+"tGravityAccMag-mean() "<br>
+"tBodyGyroMag-mean() "<br>
+"fBodyAcc-mean()-X "<br>
+"fBodyAcc-mean()-Z "<br>
+"fBodyAcc-meanFreq()-Y "<br>
+"fBodyAccJerk-mean()-X "<br>
+"fBodyAccJerk-mean()-Z "<br>
+"fBodyAccJerk-meanFreq()-Y "<br>
+"fBodyGyro-mean()-X "<br>
+"fBodyGyro-mean()-Z "<br>
+"fBodyGyro-meanFreq()-Y "<br>
+"fBodyAccMag-mean() "<br>
+"fBodyBodyAccJerkMag-mean() "<br>
+"fBodyBodyGyroMag-mean() "<br>
+"fBodyBodyGyroJerkMag-mean() "<br>
+"tBodyAcc-mean()-Y "<br>
+"tGravityAcc-mean()-X "<br>
+"tGravityAcc-mean()-Z "<br>
+"tBodyAccJerk-mean()-Y "<br>
+"tBodyGyro-mean()-X "<br>
+"tBodyGyro-mean()-Z "<br>
+"tBodyGyroJerk-mean()-Y "<br>
+"tBodyAccMag-mean() "<br>
+"tBodyAccJerkMag-mean() "<br>
+"tBodyGyroJerkMag-mean() "<br>
+"fBodyAcc-mean()-Y "<br>
+"fBodyAcc-meanFreq()-X "<br>
+"fBodyAcc-meanFreq()-Z "<br>
+"fBodyAccJerk-mean()-Y "<br>
+"fBodyAccJerk-meanFreq()-X "<br>
+"fBodyAccJerk-meanFreq()-Z "<br>
+"fBodyGyro-mean()-Y "<br>
+"fBodyGyro-meanFreq()-X "<br>
+"fBodyGyro-meanFreq()-Z "<br>
+"fBodyAccMag-meanFreq() "<br>
+"fBodyBodyAccJerkMag-meanFreq() "<br>
+"fBodyBodyGyroMag-meanFreq() "<br>
+"fBodyBodyGyroJerkMag-meanFreq() "<br>
+"tBodyAcc-std()-X "<br>
+"tBodyAcc-std()-Z "<br>
+"tGravityAcc-std()-Y "<br>
+"tBodyAccJerk-std()-X "<br>
+"tBodyAccJerk-std()-Z "<br>
+"tBodyGyro-std()-Y "<br>
+"tBodyGyroJerk-std()-X "<br>
+"tBodyGyroJerk-std()-Z "<br>
+"tGravityAccMag-std() "<br>
+"tBodyGyroMag-std() "<br>
+"fBodyAcc-std()-X "<br>
+"fBodyAcc-std()-Z "<br>
+"fBodyAccJerk-std()-Y "<br>
+"fBodyGyro-std()-X "<br>
+"fBodyGyro-std()-Z "<br>
+"fBodyBodyAccJerkMag-std() "<br>
+"fBodyBodyGyroJerkMag-std() "<br>
+"tBodyAcc-std()-Y "<br>
+"tGravityAcc-std()-X "<br>
+"tGravityAcc-std()-Z "<br>
+"tBodyAccJerk-std()-Y "<br>
+"tBodyGyro-std()-X "<br>
+"tBodyGyro-std()-Z "<br>
+"tBodyGyroJerk-std()-Y "<br>
+"tBodyAccMag-std() "<br>
+"tBodyAccJerkMag-std() "<br>
+"tBodyGyroJerkMag-std() "<br>
+"fBodyAcc-std()-Y "<br>
+"fBodyAccJerk-std()-X "<br>
+"fBodyAccJerk-std()-Z "<br>
+"fBodyGyro-std()-Y "<br>
+"fBodyAccMag-std() "<br>
+"fBodyBodyGyroMag-std() "
 
 ### Uses descriptive activity names to name the activities in the data set ###
 
@@ -101,101 +191,13 @@ with column label "activityID"
 - STANDING
 - LAYING
 
-### Appropriately labels the data set with descriptive variable names. ###
+### Create the Summary Tidy Dataset
 
-The script properly labels the dataset with descriptive names:
-all feature names and activity names are converted to ,
-underscores and brackets ("(", ")") are removed.
+Finally, the R script creates a final **tidy dataset** with the average of each measurement for each subject and then each activity
 
-Finally, all the data are merged into a single `10299x68` data frame corresponding to:
-
-- `10299x1` data frame of `subject IDs`;
-- `10299x1` data frame of `activity labels`;
-- `10299x68` data frame of `features`.
-
-Subject IDs are `integers` with values in range `[1, 30]`.
-
-Names of the attributes corresponds to:
-
-- "tbodyacc-mean-x" 
-- "tbodyacc-mean-y" 
-- "tbodyacc-mean-z" 
-- "tbodyacc-std-x" 
-- "tbodyacc-std-y" 
-- "tbodyacc-std-z" 
-- "tgravityacc-mean-x" 
-- "tgravityacc-mean-y" 
-- "tgravityacc-mean-z" 
-- "tgravityacc-std-x" 
-- "tgravityacc-std-y" 
-- "tgravityacc-std-z" 
-- "tbodyaccjerk-mean-x" 
-- "tbodyaccjerk-mean-y" 
-- "tbodyaccjerk-mean-z" 
-- "tbodyaccjerk-std-x" 
-- "tbodyaccjerk-std-y" 
-- "tbodyaccjerk-std-z" 
-- "tbodygyro-mean-x" 
-- "tbodygyro-mean-y" 
-- "tbodygyro-mean-z"
-- "tbodygyro-std-y"
-- "tbodygyro-std-z"
-- "tbodygyrojerk-mean-x"
-- "tbodygyrojerk-mean-y"
-- "tbodygyrojerk-mean-z"
-- "tbodygyrojerk-std-x"
-- "tbodygyrojerk-std-y"
-- "tbodygyrojerk-std-z"
-- "tbodyaccmag-mean"
-- "tbodyaccmag-std"
-- "tgravityaccmag-mean"
-- "tgravityaccmag-std"
-- "tbodyaccjerkmag-mean"
-- "tbodyaccjerkmag-std"
-- "tbodygyromag-mean"
-- "tbodygyromag-std"
-- "tbodygyrojerkmag-mean"
-- "tbodygyrojerkmag-std"
-- "fbodyacc-mean-x"
-- "fbodyacc-mean-y"
-- "fbodyacc-mean-z"
-- "fbodyacc-std-x"
-- "fbodyacc-std-y"
-- "fbodyacc-std-z"
-- "fbodyaccjerk-mean-x"
-- "fbodyaccjerk-mean-y"
-- "fbodyaccjerk-mean-z"
-- "fbodyaccjerk-std-x"
-- "fbodyaccjerk-std-y"
-- "fbodyaccjerk-std-z"
-- "fbodygyro-mean-x"
-- "fbodygyro-mean-y"
-- "fbodygyro-mean-z"
-- "fbodygyro-std-x"
-- "fbodygyro-std-y"
-- "fbodygyro-std-z"
-- "fbodyaccmag-mean"
-- "fbodyaccmag-std"
-- "fbodybodyaccjerkmag-mean"
-- "fbodybodyaccjerkmag-std"
-- "fbodybodygyromag-mean"
-- "fbodybodygyromag-std"
-- "fbodybodygyrojerkmag-mean"
-- "fbodybodygyrojerkmag-std"
-
-The result is saved as `merged_and_cleaned_dataset.txt`. 
-
-### Create the Tidy Dataset
-
-Finally, the script creates a second, and independent **tidy dataset** with the average
-of each measurement for each activity and each subject.
-
-The result is saved in the `tidy_dataset_with_average_values.txt` file, containing a `180x68` data frame, resulting
-from `30` **subjects** and `6` **activities** (thus `180` rows, w/ averages).
+The result is saved in the `tidy_dataset_with_average_values.txt` file, containing a `180x81` table
 
 Again, the data frame contains:
 - `subject IDs` in the 1st column;
 - `activity labels` in the 2nd column;
 - the average of `features` in the next 66 columns.
-
-**NOTE**: Please note that data in the tidy dataset are grouped by **subject**.
