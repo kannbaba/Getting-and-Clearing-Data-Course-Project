@@ -34,6 +34,15 @@ I have observed the following **steps** for the data analysis
 
 *  **Set the Working Directory** to the folder where you unrar'ed the package:
 
-     setwd("[YOUR PATH HERE]")
+* **Run** the `run_analysis.R` script: 
 
+ The script will perform the following steps:
+     - Read the Dataset
+     - Merges userdata, activity data and both the training and the test sets to create one single table
+     - Extracts only the measurements on the mean and standard deviation for each measurement. 
+     - Uses descriptive activity names to name the activities in the data set 
+     - Create the summary table with the average of each variable for each activity and each subject.
 
+  The following file is created at the end
+
+    - `summary_table.txt` (*corresponding to a `180x81` data frame*)
