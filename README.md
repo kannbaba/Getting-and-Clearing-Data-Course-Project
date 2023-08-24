@@ -36,12 +36,12 @@ I have observed the following **steps** for the data analysis
 
 * **Run** the `run_analysis.R` script: 
 
- The script will perform the following steps:
-     - Read the Dataset
-     - Merges userdata, activity data and both the training and the test sets to create one single table
-     - Extracts only the measurements on the mean and standard deviation for each measurement. 
-     - Uses descriptive activity names to name the activities in the data set 
-     - Create the summary table with the average of each variable for each activity and each subject.
+ The script will perform the following steps: <br>
+     - Read the Dataset<br>
+     - Merges userdata, activity data and both the training and the test sets to create one single table<br>
+     - Extracts only the measurements on the mean and standard deviation for each measurement. <br>
+     - Uses descriptive activity names to name the activities in the data set <br>
+     - Create the summary table with the average of each variable for each activity and each subject.<br>
 
   The following file is created at the end
 
