@@ -191,9 +191,11 @@ with column label "activityID"
 
 Finally, the R script creates a final **tidy dataset** with the average of each measurement for each subject and then each activity
 
-The result is saved in the `tidy_dataset_with_average_values.txt` file, containing a `180x81` table
+The result is saved in the `summary_table.txt` file, containing a `180x81` table
 
-The table frame contains:
+The table  contains:
+- column names
 - subject IDs in the 1st column;
 - activity labels in the 2nd column;
 - the average of attiributes in the next 79 columns.
+
