@@ -44,5 +44,5 @@ agg_data <- extracted_data %>% group_by(subjectID, activityID) %>%
 activity_names <- read.table("Project/UCI HAR Dataset/activity_labels.txt")
 agg_data [,2]=activity_names[,2]
 
-write.table(agg_data, "summary_table.txt", sep=",", row.names=TRUE, quote=FALSE)
+write.table(agg_data, "summary_table.txt", sep=",", row.names=FALSE, quote=FALSE)
 
