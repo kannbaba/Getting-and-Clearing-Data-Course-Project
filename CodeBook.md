@@ -58,7 +58,6 @@ The following files are available for the train and test data. Their description
 
 - `train/Inertial Signals/body_gyro_x_train.txt`: The angular velocity vector measured by the gyroscope for each window sample. 
                                                   These values are expressed in `radians-per-second`. 
-
 ## Data Manipulation details
 
 `run_analysis.R` script performs the following operations:
@@ -76,19 +75,16 @@ The following files are available for the train and test data. Their description
      4. Creates a second, independent tidy data set with the average of each variable 
          for each activity and each subject.
 
-
 ### Merges userdata, activity data and both the training and the test sets to create one single table
 
-* "subject_test.txt", "y_test.txt" ,and "X_test.txt" : this results in a `10299 x 1` data frame with subject IDs, activity IDs, and measurements
-* "subject_train.txt", "y_train.txt" ,and "X_train.txt" : this results in a `10299 x 1` data frame with subject IDs, activity IDs, and measurements
-* both tables are merged with rrbind method
+* "subject_test.txt", "y_test.txt" ,and "X_test.txt" : this results in a `2947 x 563` table with subject IDs, activity IDs, and measurements
+* "subject_train.txt", "y_train.txt" ,and "X_train.txt" : this results in a `7352 x 563` table with subject IDs, activity IDs, and measurements
+* both tables are merged with rrbind method resulting a single `10299x563` table
 
 ### Labels the data set appropriately with descriptive variable names. ###
 
 The script properly labels the dataset with descriptive names from the features_list which has clean names without the need for further cleaning
-
-The single data set is a a single `10299x563` data frame corresponding to, `subject IDs`, renamed `activity labels` and complete list of `attributes` in the features_list.txt
-
+The single data set is a a single `10299x563` table corresponding to, `subject IDs`, renamed `activity labels` and complete list of `attributes` in the features_list.txt
 
 ### Extracts only the measurements on the mean and standard deviation for each measurement. 
 
